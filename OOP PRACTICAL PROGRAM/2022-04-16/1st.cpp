@@ -8,8 +8,8 @@ using namespace std;
 class Bank_Costumer
 {
     char name[50];
-    double account;
-    long double balance;
+    long double account;
+    double balance;
     public:
     Bank_Costumer()
     {
@@ -17,7 +17,7 @@ class Bank_Costumer
         account=0;
         balance=0;
     }
-    Bank_Costumer(char n[50],double a,long double b)
+    Bank_Costumer(char n[50],long double a,double b)
     {
         strcpy(name,n);
         account=a;
@@ -35,8 +35,8 @@ class Bank_Costumer
 int main()
 {
   Bank_Costumer c1;
-  Bank_Costumer c2("POOJA",4567,10000);
-  Bank_Costumer c3("SABITA",1234,20000);
+  Bank_Costumer c2("POOJA",12340,1000);
+  Bank_Costumer c3("SABITA",67890,2000);
   cout<<"Default constructor called"<<endl;
   c1.display();
   cout<<"Parameterized constructor called"<<endl;
