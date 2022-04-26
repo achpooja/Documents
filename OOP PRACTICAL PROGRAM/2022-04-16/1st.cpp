@@ -15,7 +15,7 @@ class Bank_Costumer
     {
         strcpy(name,"");
         account=0;
-        balance=0;
+        balance=100;
     }
     Bank_Costumer(char n[50],long double a,double b)
     {
