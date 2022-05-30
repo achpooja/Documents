@@ -3,7 +3,7 @@ using namespace std;
 class Bank_Account
 {
     private:
-    char name[100];
+    char name[5];
     long int acc,bal;
     public:
     void OpenAcount()
@@ -19,15 +19,35 @@ class Bank_Account
     void DepositMoney()
     {
         long int amount;
+        char ch;
+        cout<<"Do you want to deposite money "<<endl;
+        cin>>ch;
+        if(ch=='d' || ch=='D')
+        {
         cout<<"Enter the ammount you want to deposite:"<<endl;
         cin>>amount;
         bal+=amount;
+        }
+        else
+        {
+            cout<<"Enter the valid choice"<<endl;
+        }
     }
     void WithdrawMoney()
     {
         long int amount;
+        char ch;
+        cout<<"Do you want to withdraw money "<<endl;
+        cin>>ch;
+        if(ch=='w'||ch=='W')
+        {
         cout<<"Enter the amount you want to withdraw:"<<endl;
         cin>>amount;
+        bal=bal-amount;
+        }
+        else{
+            cout<<"Enter the valid choice"<<endl;
+        }
 
     }
     void displayAccountInformation()
@@ -38,69 +58,62 @@ class Bank_Account
 
     }
     
-    int Search(int a)
-    {
-        if(acc==a)
-        {
-            displayAccountInformation();
-            return(1);
-        }
-        return (0);
-    }
-
 };
 int main()
 {
     Bank_Account B[10];
-    int choice ,a,found=0;
+    int choice,i=1;
     while(1)
     {
-        cout<<"1.Open an account \n2.search the record \n3.Deposite money \n4.Withdraw money \n5.Display account information \n6.Exit"<<endl;
+        cout<<"1.Open an account  \n2.Deposite money \n3.Withdraw money \n4.Display account information \n6.Exit"<<endl;
         cout<<"Enter your choice:";
         cin>>choice;
         switch(choice)
         {
             case 1:
-                  for(int i=1;i<=2;i++)
-                  {
+                
                       B[i].OpenAcount();
-                  }
+                  cout<<"Account no."<<i<<endl;
+                  
+                 
+                     B[i].displayAccountInformation();
+                   
                   break;
+     
 
             case 2:
-            cout<<"Account number:";
-            cin>>a;
-            for(int i=1;i<=2;i++)
-                {
-                 found=B[i].Search(a);
-                 if(found)
-                 break;
-                }      
-
-            case 3:
             
-                 for(int i=1;i<=2;i++)
-                 {
+                 
                      B[i].DepositMoney();
-                 } 
+                 cout<<"Account no."<<i<<endl;
+                 
+                     B[i].displayAccountInformation();
+                   
                  break;   
 
-            case 4:
-                  for(int i=1;i<=2;i++)
-                  {
+            case 3:
+                  
+                  
                       B[i].WithdrawMoney();
-                  }      
+                   
+                   cout<<"Account no."<<i<<endl;
+ 
+                 
+                     B[i].displayAccountInformation();
+                       
                   break;
 
-            case 5:
-                 for(int i=1;i<=2;i++)
-                 {
+            case 4:
+                
+                 
                      B[i].displayAccountInformation();
-                 }  
+                 
                  break;    
-            case 6:
+            case 5:
             exit(0);
+            default:cout<<"Enter valid option"<<endl;
 
+           
 
 
         }
