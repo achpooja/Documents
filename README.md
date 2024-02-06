@@ -20,7 +20,9 @@ To run the application, make sure you have Python installed on your system along
 
 Install the dependencies using the following command:
 
+```shell
 pip install pyqt5 tensorflow keras matplotlib numpy pypiwin32
+```
 
 
 ## Usage
